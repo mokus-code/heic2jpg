@@ -1,0 +1,39 @@
+# Logs
+error.log
+*.log
+
+# Windows noise
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# PowerShell history (if ever exported)
+*.pshistory
+
+# Archive artifacts
+*.zip
+*.7z
+*.rar
+
+# Temp
+~$*
+*.tmp
+
+# VS Code
+.vscode/
+.history/
+
+# macOS (in case of cross-platform edits)
+.DS_Store
+.apdisk
+
+# Python virtual envs (just in case someone experiments)
+venv/
+.env/
+
+# Node modules (if someone adds tooling)
+node_modules/
+
+# Ignore generated JPG test outputs sample (user conversions)
+*_converted.jpg

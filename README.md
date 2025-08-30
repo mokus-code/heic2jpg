@@ -1,6 +1,6 @@
 ## Convert HEIC / HEIF / WEBP to JPG (Right‑Click Menu)
 
-Turn your iPhone / Web images (.HEIC, .HEIF, .WEBP, .HEICS) into .JPG by one right‑click in Windows.
+For those tired of greedy devs milking that one lucky HEIC converter — here’s a no-nonsense tool to turn your HEIC/HEIF/WebP images into good old JPG.
 
 Works on Windows 10 and 11.
 

@@ -12,7 +12,7 @@ Install ImageMagick: https://imagemagick.org/script/download.php
 ---
 
 ### Install (simple)
-1. Download the ZIP with these files (or copy this folder) and place the folder at: `C:\heic2jpg`
+1. Download the ZIP with these files (green button Code -> Download  ZIP) and place the folder at: `C:\heic2jpg`
 2. Double‑click `add_context_menu_systemfileassoc.reg` → Yes → Yes.
 3. (Windows 11 only, if menu not visible) Right‑click the taskbar, choose Task Manager, restart Windows Explorer OR press Win+R and run: `explorer` after ending it.
 4. Done. Right‑click a `.HEIC` (or `.WEBP`) file → Convert to JPG.

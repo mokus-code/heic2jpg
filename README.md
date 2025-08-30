@@ -8,6 +8,7 @@ Works on Windows 10 and 11.
 
 ### What You Need (one‑time)
 Install ImageMagick: https://imagemagick.org/script/download.php
+Look for ImageMagick-7.1.2-3-Q16-HDRI-x64-static.exe or similar
 
 ---
 

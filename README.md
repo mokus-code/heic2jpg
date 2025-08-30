@@ -1,64 +1,58 @@
-# Convert HEIC / HEIF / WebP → JPG (Windows Context Menu)
+## Convert HEIC / HEIF / WEBP to JPG (Right‑Click Menu)
 
-Lightweight Windows context menu helper to convert `.heic`, `.heif`, `.heics`, or `.webp` images into `.jpg` via ImageMagick. Works on Windows 10/11 (shows under classic menu on Win11 if not pinned to primary surface).
+Turn your iPhone / Web images (.HEIC, .HEIF, .WEBP, .HEICS) into .JPG by one right‑click in Windows.
 
----
-
-## 📦 Installation
-
-1. Install [ImageMagick with HEIC + WebP support](https://imagemagick.org/script/download.php).
-   - For HEIC/HEIF decoding install Microsoft Store: **HEIF Image Extensions** + **HEVC Video Extensions** (or an alternative HEVC codec).
-2. Download / clone this repo and place it at `C:\heic2jpg` (path is hard‑coded in the `.reg`).
-3. Import `add_context_menu_systemfileassoc.reg` (double‑click → Yes). Keys are written to `HKCR\SystemFileAssociations` for: `.heic`, `.heif`, `.heics`, `.webp`.
-4. (Optional Win11) Restart Explorer: open PowerShell and run `Stop-Process -Name explorer -Force`.
-5. Right‑click a supported file → "Convert to JPG" (in classic menu on Win11: Shift+F10 or "Show more options").
+Works on Windows 10 and 11.
 
 ---
 
-## 📜 Files
-
-- `convert_to_jpg.ps1` – Conversion logic (ImageMagick, timestamp preservation).
-- `convert_to_jpg.cmd` – Simple wrapper invoking the PowerShell script (bypasses execution policy).
-- `add_context_menu_systemfileassoc.reg` – Adds context menu entries (extension‑scoped, robust against ProgID changes).
-- `remove_context_menu.reg` – Removes all related context menu entries (both legacy & current paths).
-- `README.md` – This documentation.
+### What You Need (one‑time)
+Install ImageMagick: https://imagemagick.org/script/download.php
 
 ---
 
-## 🔄 Uninstall
+### Install (simple)
+1. Download the ZIP with these files (or copy this folder) and place the folder at: `C:\heic2jpg`
+2. Double‑click `add_context_menu_systemfileassoc.reg` → Yes → Yes.
+3. (Windows 11 only, if menu not visible) Right‑click the taskbar, choose Task Manager, restart Windows Explorer OR press Win+R and run: `explorer` after ending it.
+4. Done. Right‑click a `.HEIC` (or `.WEBP`) file → Convert to JPG.
 
-1. Run `remove_context_menu.reg`.
-2. (Optional) Restart Explorer.
-3. Delete `C:\heic2jpg`.
-
----
-
-## ✅ Example
-
-Right-click on:
-
-```
-IMG_1234.HEIC
-IMG_5678.WEBP
-```
-
-It creates:
-
-```
-IMG_1234.JPG
-IMG_5678.JPG
-```
-
-in the same folder with preserved timestamps.
+Multi‑select: select several files, right‑click any one → Convert to JPG. Each file becomes a JPG in the same folder.
 
 ---
 
-## 🛠️ Notes
-- Silent mode: import `add_context_menu_systemfileassoc_hidden.reg` to add an additional menu entry "Convert to JPG (Silent)" that launches via a small VBS wrapper (`convert_to_jpg_hidden.vbs`) with a hidden window. Output is suppressed unless an internal error occurs (no user dialog appears). Use the regular entry if you want to see progress/errors.
- - Error log: `C:\heic2jpg\error.log` is recreated fresh each run; only errors/warnings for the latest run are kept. If no issues occurred the file is removed.
-- Multi-select triggers conversion sequentially (Explorer invokes command per file).
-- To pin the command to Win11 primary (compact) menu would require a COM shell extension or `IExplorerCommand` registration (out of scope for this simple script).
-- Adjust display name (e.g. Russian) by editing the default value under each `ConvertToJPG` key in the `.reg` file.
+### Silent (no window)
+If you prefer no window at all:
+1. Double‑click `add_context_menu_systemfileassoc_hidden.reg`.
+2. Use the new menu item: Convert to JPG (Silent).
 
-## 📄 License
-Public domain / Unlicense style: do whatever you want. (Add a formal LICENSE file if required for your distribution.)
+---
+
+### Where Are My Files?
+They appear next to the originals with the same name, just `.JPG`.
+Original timestamps (date taken / modified) are kept.
+
+---
+
+### Remove
+1. Double‑click `remove_context_menu.reg` → Yes.
+2. Delete the folder `C:\heic2jpg` if you no longer need it.
+
+---
+
+### Problems? Quick Fixes
+- No menu item: re‑run the .reg file; if Windows 11, click "Show more options" in the right‑click menu.
+- Still no HEIC support: install the HEIF + HEVC extensions (see above) and try again.
+- File did not convert: install ImageMagick again and ensure you chose the default install options.
+- Want to clear errors: if something failed a file `C:\heic2jpg\error.log` may appear — delete it; it will recreate only if there is a new error.
+- Nothing happens in Silent mode: temporarily use the normal (non‑silent) menu to see messages.
+
+---
+
+### Safety
+The scripts only run on files you select and create `.JPG` copies. They do not upload anything.
+
+---
+
+### License
+Free to use, share, modify.

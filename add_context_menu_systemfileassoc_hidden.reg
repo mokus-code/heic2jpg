@@ -1,0 +1,26 @@
+Windows Registry Editor Version 5.00
+
+; Hidden window variant using wscript + VBS launcher
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\shell\ConvertToJPGHidden]
+@="Convert to JPG (Silent)"
+"Icon"="imageres.dll,-108"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\shell\ConvertToJPGHidden\command]
+@="wscript.exe \"C:\\heic2jpg\\convert_to_jpg_hidden.vbs\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\shell\ConvertToJPGHidden]
+@="Convert to JPG (Silent)"
+"Icon"="imageres.dll,-108"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\shell\ConvertToJPGHidden\command]
+@="wscript.exe \"C:\\heic2jpg\\convert_to_jpg_hidden.vbs\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heics\shell\ConvertToJPGHidden]
+@="Convert to JPG (Silent)"
+"Icon"="imageres.dll,-108"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heics\shell\ConvertToJPGHidden\command]
+@="wscript.exe \"C:\\heic2jpg\\convert_to_jpg_hidden.vbs\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\shell\ConvertToJPGHidden]
+@="Convert to JPG (Silent)"
+"Icon"="imageres.dll,-108"
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\shell\ConvertToJPGHidden\command]
+@="wscript.exe \"C:\\heic2jpg\\convert_to_jpg_hidden.vbs\" \"%1\""

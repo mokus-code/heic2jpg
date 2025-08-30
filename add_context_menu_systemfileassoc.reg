@@ -1,0 +1,31 @@
+Windows Registry Editor Version 5.00
+
+; Context menu entries for specific extensions regardless of current ProgID
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\shell\ConvertToJPG\command]
+@="\"C:\\heic2jpg\\convert_to_jpg.cmd\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\shell\ConvertToJPG\command]
+@="\"C:\\heic2jpg\\convert_to_jpg.cmd\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heics\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.heics\shell\ConvertToJPG\command]
+@="\"C:\\heic2jpg\\convert_to_jpg.cmd\" \"%1\""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\shell\ConvertToJPG\command]
+@="\"C:\\heic2jpg\\convert_to_jpg.cmd\" \"%1\""

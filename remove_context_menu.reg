@@ -1,0 +1,17 @@
+Windows Registry Editor Version 5.00
+
+; Remove legacy (unused) locations if previously added
+[-HKEY_CLASSES_ROOT\heicfile\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\webpfile\shell\ConvertToJPG]
+
+; Remove extension-associated shell keys (in case they were created incorrectly)
+[-HKEY_CLASSES_ROOT\.heic\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\.heif\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\.heics\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\.webp\shell\ConvertToJPG]
+
+; Remove SystemFileAssociations context menu entries (current method)
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.heic\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.heif\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.heics\shell\ConvertToJPG]
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.webp\shell\ConvertToJPG]

@@ -1,0 +1,34 @@
+Windows Registry Editor Version 5.00
+
+; Create file associations first
+[HKEY_CLASSES_ROOT\.heic]
+@="heicfile"
+
+[HKEY_CLASSES_ROOT\.heif]
+@="heicfile"
+
+[HKEY_CLASSES_ROOT\.webp]
+@="webpfile"
+
+; Define the file types
+[HKEY_CLASSES_ROOT\heicfile]
+@="HEIC Image"
+
+[HKEY_CLASSES_ROOT\webpfile]
+@="WebP Image"
+
+; Add context menu for HEIC/HEIF files
+[HKEY_CLASSES_ROOT\heicfile\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\heicfile\shell\ConvertToJPG\command]
+@="powershell.exe -WindowStyle Hidden -File \"C:\\heic2jpg\\convert_to_jpg.ps1\" \"%1\""
+
+; Add context menu for WEBP files
+[HKEY_CLASSES_ROOT\webpfile\shell\ConvertToJPG]
+@="Convert to JPG"
+"Icon"="imageres.dll,-108"
+
+[HKEY_CLASSES_ROOT\webpfile\shell\ConvertToJPG\command]
+@="powershell.exe -WindowStyle Hidden -File \"C:\\heic2jpg\\convert_to_jpg.ps1\" \"%1\""

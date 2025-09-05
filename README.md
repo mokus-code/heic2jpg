@@ -44,7 +44,8 @@ Original timestamps (date taken / modified) are kept.
 - No menu item: re‑run the .reg file; if Windows 11, click "Show more options" in the right‑click menu.
 - Still no HEIC support: install the HEIF + HEVC extensions (see above) and try again.
 - File did not convert: install ImageMagick again and ensure you chose the default install options.
-- Want to clear errors: if something failed a file `C:\heic2jpg\error.log` may appear — delete it; it will recreate only if there is a new error.
+- Error log: `C:\heic2jpg\error.log` is created only when an error or warning happens; if only a header would remain it is removed.
+- Want to clear errors: just delete the log file; it appears again only on the next error.
 - Nothing happens in Silent mode: temporarily use the normal (non‑silent) menu to see messages.
 
 ---

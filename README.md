@@ -1,6 +1,6 @@
 ## Convert HEIC / HEIF / WEBP to JPG (Right‑Click Menu)
 
-Turn your iPhone / Web images (.HEIC, .HEIF, .WEBP, .HEICS) into .JPG by one right‑click in Windows.
+For those tired of greedy devs milking that one lucky HEIC converter — here’s a no-nonsense tool to turn your HEIC/HEIF/WebP images into good old JPG.
 
 Works on Windows 10 and 11.
 
@@ -8,6 +8,8 @@ Works on Windows 10 and 11.
 
 ### What You Need (one‑time)
 Install ImageMagick: https://imagemagick.org/script/download.php
+
+Look for ImageMagick-7.1.2-3-Q16-HDRI-x64-static.exe or similar
 
 ---
 
@@ -42,7 +44,6 @@ Original timestamps (date taken / modified) are kept.
 
 ### Problems? Quick Fixes
 - No menu item: re‑run the .reg file; if Windows 11, click "Show more options" in the right‑click menu.
-- Still no HEIC support: install the HEIF + HEVC extensions (see above) and try again.
 - File did not convert: install ImageMagick again and ensure you chose the default install options.
 - Error log: `C:\heic2jpg\error.log` is created only when an error or warning happens; if only a header would remain it is removed.
 - Want to clear errors: just delete the log file; it appears again only on the next error.

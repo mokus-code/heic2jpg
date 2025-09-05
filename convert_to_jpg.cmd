@@ -14,5 +14,7 @@ if not "%CODE%"=="0" (
 	echo [heic2jpg] PowerShell exited with code %CODE%>&2
 )
 
+pause
+
 endlocal & exit /b %CODE%
 

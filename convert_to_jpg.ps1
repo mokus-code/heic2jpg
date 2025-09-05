@@ -6,17 +6,18 @@ param(
 $ErrorActionPreference = 'Stop'
 $logFile = 'C:\heic2jpg\error.log'
 
-# Start fresh log for this run
-if (Test-Path $logFile) { Remove-Item $logFile -ErrorAction SilentlyContinue }
-New-Item -ItemType File -Path $logFile -Force | Out-Null
-Set-Content -Path $logFile -Value "# Errors for run starting $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"  # header line
-Add-Content -Path $logFile -Value "# Only warnings/errors are listed; empty file => no issues."
+function Ensure-Log {
+    if (-not (Test-Path $logFile)) {
+        Set-Content -Path $logFile -Value "# Errors for run starting $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        Add-Content -Path $logFile -Value "# Only warnings/errors for this run."    
+    }
+}
 
 function Log-Warn {
     param([string]$Message)
+    Ensure-Log
     $timestamp = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
-    $line = "[$timestamp] $Message"
-    Add-Content -Path $logFile -Value $line
+    Add-Content -Path $logFile -Value "[$timestamp] $Message"
 }
 
 # Supported input extensions
@@ -59,6 +60,8 @@ foreach ($file in $files) {
     }
 }
 
-# If only header lines present (no actual errors), remove the log file
-$content = Get-Content -Path $logFile
-if ($content.Count -le 2) { Remove-Item $logFile -ErrorAction SilentlyContinue }
+# If log exists but contains only header lines (no real errors), remove it
+if (Test-Path $logFile) {
+    $content = Get-Content -Path $logFile
+    if ($content.Count -le 2) { Remove-Item $logFile -ErrorAction SilentlyContinue }
+}
